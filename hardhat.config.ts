@@ -17,7 +17,7 @@ const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY;
 const ETH_MAINNET_URL = process.env.ETH_MAINNET_URL;
 const ETH_RINKEBY_URL = process.env.ETH_RINKEBY_URL;
 
-const POLYGON_MAINNET_URL = process.env.POLYGON_MAINNET_URL;
+const POLYGON_MATIC_URL = process.env.POLYGON_MATIC_URL;
 const POLYGON_MUMBAI_URL = process.env.POLYGON_MUMBAI_URL;
 
 const config: HardhatUserConfig = {
@@ -32,7 +32,7 @@ const config: HardhatUserConfig = {
       accounts: [`${PRIVATE_KEY}`],
     },
     matic: {
-      url: POLYGON_MAINNET_URL,
+      url: POLYGON_MATIC_URL,
       accounts: [`${PRIVATE_KEY}`],
     },
     mumbai: {
