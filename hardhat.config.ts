@@ -6,6 +6,7 @@ import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
+import "@tenderly/hardhat-tenderly";
 
 dotenv.config();
 
@@ -24,19 +25,19 @@ const config: HardhatUserConfig = {
   networks: {
     mainnet: {
       url: ETH_MAINNET_URL,
-      accounts: [`0x${PRIVATE_KEY}`],
+      accounts: [`${PRIVATE_KEY}`],
     },
     rinkeby: {
       url: ETH_RINKEBY_URL,
-      accounts: [`0x${PRIVATE_KEY}`],
+      accounts: [`${PRIVATE_KEY}`],
     },
     matic: {
       url: POLYGON_MAINNET_URL,
-      accounts: [`0x${PRIVATE_KEY}`],
+      accounts: [`${PRIVATE_KEY}`],
     },
     mumbai: {
       url: POLYGON_MUMBAI_URL,
-      accounts: [`0x${PRIVATE_KEY}`],
+      accounts: [`${PRIVATE_KEY}`],
     },
   },
   gasReporter: {
@@ -49,6 +50,10 @@ const config: HardhatUserConfig = {
   typechain: {
     outDir: "src/types",
     target: "ethers-v5",
+  },
+  tenderly: {
+    project: String(process.env.TENDERLY_PROJECT),
+    username: String(process.env.TENDERLY_USERNAME),
   },
 };
 
