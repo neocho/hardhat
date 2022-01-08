@@ -4,13 +4,13 @@
   "scripts": {
     "test": "npx hardhat test",
     "compile": "npx hardhat compile",
-    "lint": "npx prettier --write '**/*.js' '**/*.ts' 'contracts/**/*.sol' '**/*.json'", 
-    "deploy-localhost": "npx hardhat run --network localhost scripts/deploy.js", 
+    "lint": "npx solhint 'contracts/**/*.sol'; npx prettier --write '**/*.js' '**/*.ts' 'contracts/**/*.sol' '**/*.json'",
+    "deploy-localhost": "npx hardhat run --network localhost scripts/deploy.js",
     "deploy-mainnet": "npx hardhat run --network mainnet scripts/deploy.js",
     "verify-mainnet": "npx hardhat verify --network mainnet",
     "deploy-rinkeby": "npx hardhat run --network rinkeby scripts/deploy.js",
     "verify-rinkeby": "npx hardhat verify --network rinkeby",
-    "deploy-mumbai": "npx hardhat run --network mumbai scripts/deploy.js", 
+    "deploy-mumbai": "npx hardhat run --network mumbai scripts/deploy.js",
     "verify-mumbai": "npx hardhat verify --network mumbai",
     "deploy-matic": "npx hardhat run --network matic scripts/deploy.js",
     "verify-matic": "npx hardhat verify --network matic"
